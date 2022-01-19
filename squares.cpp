@@ -15,7 +15,7 @@ int main() {
     {
         for (int i = 0; i < dimension; i++)
         {
-            cout << ".";
+            cout << ". ";
         }
         cout << endl;
     }
