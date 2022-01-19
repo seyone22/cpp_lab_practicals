@@ -5,19 +5,31 @@
 
 using namespace std;
 
+string getInput(string descriptor)
+{
+    string input;
+    cout << descriptor << endl;
+    cout << ">> ";
+    cin >> input;
+    return input;
+}
+
 int main() {
     int dimension = 0;
+    string selector = "";
+    do {
+        dimension = stoi(getInput("Please enter the dimensions of the square to be printed"));
 
-    cout << "Please enter the dimensions of the square you want to make" << endl << ">>";
-    cin >> dimension;
-
-    for (int i = 0; i < dimension; i++)
-    {
         for (int i = 0; i < dimension; i++)
         {
-            cout << ". ";
+            for (int i = 0; i < dimension; i++)
+            {
+                cout << ". ";
+            }
+            cout << endl;
         }
-        cout << endl;
-    }
+        selector = getInput("Do you want to print another square? (Y/N)");
+    }while(selector == "Y" || selector == "y");
+
     return 0;
 }
